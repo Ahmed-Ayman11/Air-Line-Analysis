@@ -6,7 +6,7 @@ import plotly.express as px
 st.title ("Airline Insights✈️")
 st.divider()
 
-df_eda = pd.read_csv(r"D:\Data Science\Mid Project\Ahmed\Airline_review_clean.csv")
+df_eda = pd.read_csv(r"Airline_review_clean.csv")
 top_10 = df_eda['airline_name'].value_counts().head(10).reset_index()['airline_name'].to_list()
 
 fig = px.bar(df_eda[df_eda['airline_name'].isin(top_10)].groupby(['airline_name', 'recommended'])['index'].count().reset_index(), y='airline_name', x='index', color='recommended', barmode='group', text_auto=True, template='plotly_dark', labels={'airline_name':'Airline Name', 'index':'Count', 'recommended':'Recommended'}, title='Top 10 Airlines Recommendation') 
