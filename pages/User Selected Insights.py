@@ -6,7 +6,7 @@ import plotly.express as px
 st.title ("Airline Insights✈️")
 st.divider()
 
-df_eda = pd.read_csv(r"D:\Data Science\Mid Project\Ahmed\Airline_review_clean.csv")
+df_eda = pd.read_csv(r"Airline_review_clean.csv")
 top_10 = df_eda['airline_name'].value_counts().head(10).reset_index()['airline_name'].to_list()
 
 column1, column2 = st.columns(2)
